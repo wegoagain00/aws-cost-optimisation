@@ -1,5 +1,5 @@
 
-(image coming) architecture is lambda function (which will have python code (boto3)), it will talk to the AWS API, - to fetch EBS snapshots and to filter out snapshots that are 'still' then delete them
+![alt text](images/lambda-ebs.png)
 
 **Identifying Stale EBS Snapshots**
 
@@ -29,7 +29,7 @@ Then create test event, then test it. (there will be an error in OUTPUT as the s
 
 ![alt text](images/img-3.png)
 
-You will also notice an error when you read the output and this is because the code requires permission to ‘DescribeSnapshots’ and few others. 
+You will also notice an error when you read the output and this is because the code requires permission to ‘DescribeSnapshots’ and few others.
 
 When a Lambda function needs to interact with other AWS services, it must be granted the appropriate IAM permissions through its execution role. By default, a new Lambda function does not have permissions to perform actions like creating a snapshot. You need to attach an IAM role with the necessary policies to allow the Lambda to perform these operations.
 
